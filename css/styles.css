@@ -127,3 +127,41 @@ a::after {
   border: 2px solid hsla(0, 0%, 100%, 0.12);
   box-shadow: 0px 3px 37px hsla(0, 0%, 0%, 0.16);
 }
+
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: 5rem;
+    padding: 6px 75px;
+  }
+}
+
+/* Inputs */
+.input {
+  border-radius: 97px;
+  font-size: 21px;
+  padding: 7px 25px;
+  font-weight: lighter;
+  border: none;
+  outline: none;
+  color: var(--color-white);
+  background: transparent linear-gradient(103deg, #ffffff45 0%, #ffffff1c 100%)
+    0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 24px #00000078;
+  border: 2px solid #ffffff12;
+}
+
+.input::placeholder {
+  color: var(--color-white);
+  mix-blend-mode: overlay;
+}
+
+@media screen and (min-width: 1024px) {
+  .input {
+    font-size: 5rem;
+    padding: 20px 60px;
+  }
+}
+
+/* Searchboxes */
+.search-box {
+}
