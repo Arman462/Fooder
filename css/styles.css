@@ -1,0 +1,79 @@
+:root {
+  --color-primary: hsl(34, 95%, 49%);
+  --color-white: white;
+  --color-black: black;
+}
+
+/* Typography */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--color-black);
+  font-family: oswald, Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-size: 1.5rem;
+  color: var(--color-white);
+  font-family: "Open sans", Arial, Helvetica, sans-serif;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.p-small {
+  font-size: 1.2rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 7rem;
+  /* mix-blend-mode: overlay; */
+  color: var(--color-white);
+}
+
+h2 {
+  font-size: 3rem;
+  color: var(--color-white);
+}
+
+h3 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  font-weight: normal;
+}
+
+@media screen and (min-width: 1024px) {
+  p,
+  h1,
+  h2,
+  h3 {
+    text-align-last: left;
+  }
+
+  p {
+    font-size: 3rem;
+  }
+
+  .p-small {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 12rem;
+  }
+
+  h2 {
+    font-size: 6rem;
+  }
+
+  h3 {
+    font-size: 4rem;
+  }
+}
