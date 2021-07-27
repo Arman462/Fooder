@@ -34,7 +34,7 @@ h3 {
 
 h1 {
   font-size: 7rem;
-  /* mix-blend-mode: overlay; */
+  mix-blend-mode: overlay;
   color: var(--color-white);
 }
 
@@ -75,5 +75,23 @@ h3 {
 
   h3 {
     font-size: 4rem;
+  }
+}
+
+/* Links */
+a {
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a::after {
+  content: " >";
+}
+
+@media screen and (min-width: 1024px) {
+  a {
+    font-size: 2rem;
   }
 }
