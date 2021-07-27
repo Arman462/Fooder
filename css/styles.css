@@ -95,3 +95,16 @@ a::after {
     font-size: 2rem;
   }
 }
+
+/* Logo */
+.logo {
+  color: var(--color-white);
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+  .logo {
+    font-size: 6rem;
+  }
+}
