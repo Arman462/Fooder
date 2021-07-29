@@ -54,7 +54,7 @@ h3 {
   h1,
   h2,
   h3 {
-    text-align-last: left;
+    text-align: left;
   }
 
   p {
@@ -165,12 +165,13 @@ a::after {
 /* Searchboxes */
 .search-box {
   position: relative;
-  width: 324px;
+  width: 100%;
+  margin: auto;
 }
 
 .search-box .btn {
   position: absolute;
-  top: 2px;
+  top: 2.5px;
   right: 5px;
 }
 
@@ -203,5 +204,38 @@ a::after {
   .img-round {
     width: 325px;
     height: 325px;
+  }
+}
+
+/* Middle bar */
+.middle-bar {
+  background: var(--color-primary);
+  padding: 40px 20px;
+}
+
+.middle-bar-heading {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .middle-bar {
+    padding: 136px 20px;
+  }
+
+  .middle-bar .search-box {
+    display: none;
+  }
+
+  .middle-bar-heading,
+  .middle-bar-paragraph {
+    text-align: center;
+  }
+
+  .middle-bar-paragraph span {
+    display: none;
+  }
+
+  .middle-bar-paragraph::after {
+    content: "Down here you can find some of the trending dishes. Enjoy it.";
   }
 }
