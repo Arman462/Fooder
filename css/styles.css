@@ -269,3 +269,33 @@ a::after {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Icons */
+.icon-group {
+  text-align: center;
+}
+
+.icon {
+  width: 26px;
+  margin: 12.5px;
+}
+
+@media screen and (min-width: 1024px) {
+  .icon {
+    width: 92px;
+  }
+
+  .icon-group {
+    margin: 20px;
+  }
+}
+/* Footer */
+footer {
+  background: var(--color-primary);
+  padding: 15px;
+}
+
+footer p {
+  margin: 0;
+  text-align: center;
+}
