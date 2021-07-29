@@ -26,6 +26,10 @@ p {
   font-size: 1.2rem;
 }
 
+.p-dark {
+  color: var(--color-black);
+}
+
 h1,
 h2,
 h3 {
@@ -237,5 +241,23 @@ a::after {
 
   .middle-bar-paragraph::after {
     content: "Down here you can find some of the trending dishes. Enjoy it.";
+  }
+}
+
+/* Posts */
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+}
+
+.post h3 {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .post p {
+    text-align: center;
   }
 }
