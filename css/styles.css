@@ -261,3 +261,11 @@ a::after {
     text-align: center;
   }
 }
+
+/* Post grops */
+@media screen and (min-width: 1024px) {
+  .post-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
