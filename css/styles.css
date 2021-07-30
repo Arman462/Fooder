@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background: var(--color-primary);
+  /* background: var(--color-primary); */
   font-family: oswald, Arial, Helvetica, sans-serif;
 }
 
@@ -83,19 +83,19 @@ h3 {
 }
 
 /* Links */
-a {
+.a-read-more {
   font-size: 1.2rem;
   text-align: center;
   color: var(--color-primary);
   text-decoration: none;
 }
 
-a::after {
+.a-read-more::after {
   content: " >";
 }
 
 @media screen and (min-width: 1024px) {
-  a {
+  .a-read-more {
     font-size: 2rem;
   }
 }
@@ -354,5 +354,50 @@ footer p {
     display: block;
     margin-left: 150px;
     margin-top: 30px;
+  }
+}
+
+/* Navbar */
+nav {
+  background: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.link-container {
+  display: none;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  text-align: center;
+  margin: 20px;
+}
+
+.nav-link {
+  color: var(--color-white);
+  font-weight: lighter;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    padding: 10px 40px;
+  }
+
+  .toggler {
+    display: none;
+  }
+
+  .link-container {
+    display: flex;
+    flex-direction: row;
+    width: auto;
   }
 }
