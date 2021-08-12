@@ -40,6 +40,7 @@ h1 {
   font-size: 7rem;
   mix-blend-mode: overlay;
   color: var(--color-white);
+  position: relative;
 }
 
 h2 {
@@ -54,6 +55,35 @@ h3 {
 }
 
 @media screen and (min-width: 1024px) {
+  p,
+  h1,
+  h2,
+  h3 {
+    text-align: left;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+
+  .p-small {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 10rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+/* @media screen and (min-width: 1024px) {
   p,
   h1,
   h2,
@@ -80,7 +110,7 @@ h3 {
   h3 {
     font-size: 4rem;
   }
-}
+} */
 
 /* Links */
 .a-read-more {
@@ -96,9 +126,15 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   .a-read-more {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
+
+/* @media screen and (min-width: 1024px) {
+  .a-read-more {
+    font-size: 2rem;
+  }
+} */
 
 /* Logo */
 .logo {
@@ -109,9 +145,15 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   .logo {
-    font-size: 6rem;
+    font-size: 3.5rem;
   }
 }
+
+/* @media screen and (min-width: 1024px) {
+  .logo {
+    font-size: 6rem;
+  }
+} */
 
 /* Buttons */
 .btn {
@@ -134,10 +176,17 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   .btn {
+    font-size: 3rem;
+    padding: 6px 30px;
+  }
+}
+
+/* @media screen and (min-width: 1024px) {
+  .btn {
     font-size: 5rem;
     padding: 6px 75px;
   }
-}
+} */
 
 /* Inputs */
 .input {
@@ -161,10 +210,17 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   .input {
+    font-size: 3rem;
+    padding: 10px 30px;
+  }
+}
+
+/* @media screen and (min-width: 1024px) {
+  .input {
     font-size: 5rem;
     padding: 20px 60px;
   }
-}
+} */
 
 /* Searchboxes */
 .search-box {
@@ -190,10 +246,21 @@ h3 {
   }
 
   .search-box .btn {
+    top: 4px;
+    right: 4px;
+  }
+}
+
+/* @media screen and (min-width: 1024px) {
+  .search-box {
+    width: 768px;
+  }
+
+  .search-box .btn {
     top: 13px;
     right: 14px;
   }
-}
+} */
 
 /* Rounded images */
 .img-round {
@@ -206,15 +273,23 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   .img-round {
+    width: 184px;
+    height: 184px;
+  }
+}
+
+/* @media screen and (min-width: 1024px) {
+  .img-round {
     width: 325px;
     height: 325px;
   }
-}
+} */
 
 /* Middle bar */
 .middle-bar {
   background: var(--color-primary);
   padding: 40px 20px;
+  mix-blend-mode: overlay;
 }
 
 .middle-bar-heading {
@@ -222,6 +297,29 @@ h3 {
 }
 
 @media screen and (min-width: 1024px) {
+  .middle-bar {
+    padding: 60px 20px;
+  }
+
+  .middle-bar .search-box {
+    display: none;
+  }
+
+  .middle-bar-heading,
+  .middle-bar-paragraph {
+    text-align: center;
+  }
+
+  .middle-bar-paragraph span {
+    display: none;
+  }
+
+  .middle-bar-paragraph::after {
+    content: "Down here you can find some of the trending dishes. Enjoy it.";
+  }
+}
+
+/* @media screen and (min-width: 1024px) {
   .middle-bar {
     padding: 136px 20px;
   }
@@ -242,7 +340,7 @@ h3 {
   .middle-bar-paragraph::after {
     content: "Down here you can find some of the trending dishes. Enjoy it.";
   }
-}
+} */
 
 /* Posts */
 .post {
@@ -265,6 +363,7 @@ h3 {
 /* Post grops */
 @media screen and (min-width: 1024px) {
   .post-group {
+    margin: 100px 10vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -282,13 +381,23 @@ h3 {
 
 @media screen and (min-width: 1024px) {
   .icon {
-    width: 92px;
+    width: 50px;
   }
 
   .icon-group {
     margin: 20px;
   }
 }
+
+/* @media screen and (min-width: 1024px) {
+  .icon {
+    width: 92px;
+  }
+
+  .icon-group {
+    margin: 20px;
+  }
+} */
 
 /* Footer */
 footer {
@@ -330,20 +439,33 @@ footer p {
 @media screen and (min-width: 1024px) {
   .main-container {
     flex-direction: row;
+    min-height: 85vh;
   }
 
   .main-container img {
+    position: absolute;
+    right: 0;
+    width: 50vw;
+    height: 50vw;
+  }
+  /* .main-container img {
+    position: absolute;
+    right: 0;
     width: 840px;
     height: 840px;
+  } */
+
+  .main-container-first-section {
+    width: 50vw;
   }
 
   .main-container h1 {
-    margin: 150px;
+    margin: 80px;
     margin-bottom: 20px;
   }
 
   .main-container p {
-    margin: 150px;
+    margin: 80px;
     margin-top: 0;
     margin-right: 0;
     margin-bottom: 0;
@@ -352,8 +474,10 @@ footer p {
 
   .main-container .search-box {
     display: block;
-    margin-left: 150px;
+    margin-left: 80px;
     margin-top: 30px;
+    margin-bottom: 80px;
+    width: 100%;
   }
 }
 
@@ -365,6 +489,11 @@ nav {
   align-items: center;
   padding: 10px 20px;
   flex-wrap: wrap;
+}
+
+.nav-overlay {
+  background-blend-mode: overlay;
+  mix-blend-mode: overlay;
 }
 
 .link-container {
@@ -399,5 +528,16 @@ nav ul li {
     display: flex;
     flex-direction: row;
     width: auto;
+  }
+}
+
+main {
+  background-image: url(/images/Background.png);
+  background-size: cover;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    background-size: 120% 120%;
   }
 }
