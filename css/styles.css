@@ -48,6 +48,10 @@ h2 {
   color: var(--color-white);
 }
 
+.color-orange {
+  color: var(--color-primary);
+}
+
 h3 {
   font-size: 2.5rem;
   color: var(--color-primary);
@@ -218,7 +222,11 @@ h3 {
   border: 2px solid var(--color-primary);
 }
 
-.input::placeholder {
+.input-orange::placeholder {
+  color: var(--color-primary);
+}
+
+.input-white::placeholder {
   color: var(--color-white);
   mix-blend-mode: overlay;
 }
@@ -546,6 +554,8 @@ nav ul li {
   }
 }
 
+/* Top part of the main page */
+
 main {
   background-image: url(/images/Background.png);
   background-size: cover;
@@ -555,4 +565,20 @@ main {
   main {
     background-size: 120% 120%;
   }
+}
+
+/* Result page */
+/* Result container */
+.result-container {
+  margin: 20px;
+}
+
+.result-container h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.result-container p {
+  opacity: 0.5;
+  text-align: center;
 }
