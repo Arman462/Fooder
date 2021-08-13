@@ -161,7 +161,9 @@ h3 {
   font-weight: lighter;
   padding: 4px 32px;
   border-radius: 97px;
-  border: none;
+}
+
+.btn-white {
   color: var(--color-white);
   background: transparent
     linear-gradient(
@@ -172,6 +174,12 @@ h3 {
     0% 0% no-repeat padding-box;
   border: 2px solid hsla(0, 0%, 100%, 0.12);
   box-shadow: 0px 3px 37px hsla(0, 0%, 0%, 0.16);
+}
+
+.btn-orange {
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  background: transparent;
 }
 
 @media screen and (min-width: 1024px) {
@@ -194,13 +202,20 @@ h3 {
   font-size: 21px;
   padding: 7px 25px;
   font-weight: lighter;
-  border: none;
   outline: none;
+}
+
+.input-white {
   color: var(--color-white);
   background: transparent linear-gradient(103deg, #ffffff45 0%, #ffffff1c 100%)
     0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 24px #00000078;
   border: 2px solid #ffffff12;
+}
+
+.input-orange {
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .input::placeholder {
@@ -477,7 +492,7 @@ footer p {
     margin-left: 80px;
     margin-top: 30px;
     margin-bottom: 80px;
-    width: 100%;
+    width: 85%;
   }
 }
 
@@ -517,7 +532,7 @@ nav ul li {
 
 @media screen and (min-width: 1024px) {
   nav {
-    padding: 10px 40px;
+    padding: 0 40px;
   }
 
   .toggler {
