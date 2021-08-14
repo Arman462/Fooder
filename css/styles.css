@@ -582,3 +582,34 @@ main {
   opacity: 0.5;
   text-align: center;
 }
+
+/* Page changer */
+.page-changer {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-black);
+  font-family: "Open sans", Arial, Helvetica, sans-serif;
+}
+
+.page-changer li {
+  margin: 10px;
+  opacity: 0.5;
+}
+
+.page-changer .active-page {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  .page-changer {
+    font-size: 2rem;
+  }
+
+  .page-changer li {
+    margin: 20px;
+  }
+}
