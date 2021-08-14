@@ -294,10 +294,20 @@ h3 {
   box-shadow: 0px 0px 15px var(--color-primary);
 }
 
+.img-rectangle {
+  width: 70%;
+  height: auto;
+}
+
 @media screen and (min-width: 1024px) {
   .img-round {
     width: 184px;
     height: 184px;
+  }
+
+  .img-rectangle {
+    width: auto;
+    height: auto;
   }
 }
 
