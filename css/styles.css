@@ -611,7 +611,7 @@ ul {
   margin: 1.8rem;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .ingredients-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -668,7 +668,7 @@ ul {
 }
 
 .recipe-container p {
-  margin: 0 45px;
+  margin: 0 25px;
 }
 
 .recipe-container .recipe-step {
@@ -678,7 +678,7 @@ ul {
 }
 
 .ingredients-list {
-  margin: 0 50px;
+  margin: 0 30px;
   justify-self: start;
 }
 
@@ -708,7 +708,20 @@ ul {
     grid-column-end: 3;
   }
 
+  .summary-container p {
+    margin-right: 20px;
+  }
+
   .steps-container {
     grid-column-start: span 2;
   }
+}
+
+/* Recipe page */
+.recipe-page-content {
+  margin: 20px;
+}
+
+.recipe-page-main-heading {
+  text-align: center;
 }
