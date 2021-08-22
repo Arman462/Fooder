@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const https = require('https');
+const fetch = require('node-fetch')
 
 const app = express();
 app.use(express.static(__dirname + "/public"));
@@ -13,32 +13,17 @@ app.get("/", function (req, res) {
 });
 
 app.get("/query/:queryPhrase", (req, res) => {
-    console.log("hey");
 
-    // let url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=63c9ee7c9738400d8ac175998bec5de9&query="
-    // + req.params.queryPhrase;
+    url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=63c9ee7c9738400d8ac175998bec5de9&addRecipeInformation=true&query="
+        + req.params.queryPhrase + "&number=9";
 
-    let url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=63c9ee7c9738400d8ac175998bec5de9&query=pasta&number=1";
-    let recipes = [];
-
-    for (let i = 0; i < 9; i++) {
-        url = url + "&offset=" + i;
-
-        https.get(url, function (response) {
-            response.on("data", function (data) {
-                let recipe = JSON.parse(data);
-                // console.log(typeof recipe);
-                recipes.push(recipe);
-                // console.log(recipe);
-            })
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            res.render('result', { searchedPhrase: req.params.queryPhrase, recipeData: data });
         })
 
-        url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=63c9ee7c9738400d8ac175998bec5de9&query=pasta&number=1";
-    }
-
-    console.log(recipes[0]);
-
-    res.render("result", { searchedPhrase: req.params.queryPhrase });
 });
 
 app.post("/", function (req, res) {

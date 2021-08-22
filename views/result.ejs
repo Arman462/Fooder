@@ -35,110 +35,121 @@
         <button class="btn btn-orange">Search</button>
       </form>
       <h2 class="color-orange">Here are results for <%= searchedPhrase %></h2>
-      <p class="p-dark">120 matches found</p>
+      <p class="p-dark"><%= recipeData.totalResults %> matches found</p>
     </div>
 
     <div class="post-group">
+      <% recipeData.results.forEach(result =>{ %>
       <div class="post">
-        <img class="img-round" src="/images/Image -1.png" alt="" />
-        <h3>Beef Fajita Marinade</h3>
-        <p class="p-dark p-small">
-          The recipe Beef Fajita Marinade is ready and is definitely a
-          tremendous
-          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
-          recipe serves 2 and
-        </p>
+        <img class="img-round" src="<%= result.image %>" alt="" />
+        <h3><%= result.title %></h3>
+        <p class="p-dark p-small"><%- result.summary %></p>
+        <p class="p-dark p-small">...</p>
         <a class="a-read-more" href="">Read More</a>
       </div>
-      <div class="post">
-        <img class="img-round" src="/images/Image -1.png" alt="" />
-        <h3>Beef Fajita Marinade</h3>
-        <p class="p-dark p-small">
-          The recipe Beef Fajita Marinade is ready and is definitely a
-          tremendous
-          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
-          recipe serves 2 and
-        </p>
-        <a class="a-read-more" href="">Read More</a>
-      </div>
-      <div class="post">
-        <img class="img-round" src="/images/Image -1.png" alt="" />
-        <h3>Beef Fajita Marinade</h3>
-        <p class="p-dark p-small">
-          The recipe Beef Fajita Marinade is ready and is definitely a
-          tremendous
-          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
-          recipe serves 2 and
-        </p>
-        <a class="a-read-more" href="">Read More</a>
-      </div>
-      <div class="post">
-        <img class="img-round" src="/images/Image -1.png" alt="" />
-        <h3>Beef Fajita Marinade</h3>
-        <p class="p-dark p-small">
-          The recipe Beef Fajita Marinade is ready and is definitely a
-          tremendous
-          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
-          recipe serves 2 and
-        </p>
-        <a class="a-read-more" href="">Read More</a>
-      </div>
-      <div class="post">
-        <img class="img-round" src="/images/Image -1.png" alt="" />
-        <h3>Beef Fajita Marinade</h3>
-        <p class="p-dark p-small">
-          The recipe Beef Fajita Marinade is ready and is definitely a
-          tremendous
-          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
-          recipe serves 2 and
-        </p>
-        <a class="a-read-more" href="">Read More</a>
-      </div>
-      <div class="post">
-        <img class="img-round" src="/images/Image -1.png" alt="" />
-        <h3>Beef Fajita Marinade</h3>
-        <p class="p-dark p-small">
-          The recipe Beef Fajita Marinade is ready and is definitely a
-          tremendous
-          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
-          recipe serves 2 and
-        </p>
-        <a class="a-read-more" href="">Read More</a>
-      </div>
-      <div class="post">
-        <img class="img-round" src="/images/Image -1.png" alt="" />
-        <h3>Beef Fajita Marinade</h3>
-        <p class="p-dark p-small">
-          The recipe Beef Fajita Marinade is ready and is definitely a
-          tremendous
-          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
-          recipe serves 2 and
-        </p>
-        <a class="a-read-more" href="">Read More</a>
-      </div>
-      <div class="post">
-        <img class="img-round" src="/images/Image -1.png" alt="" />
-        <h3>Beef Fajita Marinade</h3>
-        <p class="p-dark p-small">
-          The recipe Beef Fajita Marinade is ready and is definitely a
-          tremendous
-          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
-          recipe serves 2 and
-        </p>
-        <a class="a-read-more" href="">Read More</a>
-      </div>
-      <div class="post">
-        <img class="img-round" src="/images/Image -1.png" alt="" />
-        <h3>Beef Fajita Marinade</h3>
-        <p class="p-dark p-small">
-          The recipe Beef Fajita Marinade is ready and is definitely a
-          tremendous
-          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
-          recipe serves 2 and
-        </p>
-        <a class="a-read-more" href="">Read More</a>
-      </div>
+      <% }) %>
     </div>
+
+    <!--         
+      <div class="post">
+        <img class="img-round" src="/images/Image -1.png" alt="" />
+        <h3>Beef Fajita Marinade</h3>
+        <p class="p-dark p-small">
+          The recipe Beef Fajita Marinade is ready and is definitely a
+          tremendous
+          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
+          recipe serves 2 and
+        </p>
+        <a class="a-read-more" href="">Read More</a>
+      </div>
+      <div class="post">
+        <img class="img-round" src="/images/Image -1.png" alt="" />
+        <h3>Beef Fajita Marinade</h3>
+        <p class="p-dark p-small">
+          The recipe Beef Fajita Marinade is ready and is definitely a
+          tremendous
+          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
+          recipe serves 2 and
+        </p>
+        <a class="a-read-more" href="">Read More</a>
+      </div>
+      <div class="post">
+        <img class="img-round" src="/images/Image -1.png" alt="" />
+        <h3>Beef Fajita Marinade</h3>
+        <p class="p-dark p-small">
+          The recipe Beef Fajita Marinade is ready and is definitely a
+          tremendous
+          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
+          recipe serves 2 and
+        </p>
+        <a class="a-read-more" href="">Read More</a>
+      </div>
+      <div class="post">
+        <img class="img-round" src="/images/Image -1.png" alt="" />
+        <h3>Beef Fajita Marinade</h3>
+        <p class="p-dark p-small">
+          The recipe Beef Fajita Marinade is ready and is definitely a
+          tremendous
+          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
+          recipe serves 2 and
+        </p>
+        <a class="a-read-more" href="">Read More</a>
+      </div>
+      <div class="post">
+        <img class="img-round" src="/images/Image -1.png" alt="" />
+        <h3>Beef Fajita Marinade</h3>
+        <p class="p-dark p-small">
+          The recipe Beef Fajita Marinade is ready and is definitely a
+          tremendous
+          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
+          recipe serves 2 and
+        </p>
+        <a class="a-read-more" href="">Read More</a>
+      </div>
+      <div class="post">
+        <img class="img-round" src="/images/Image -1.png" alt="" />
+        <h3>Beef Fajita Marinade</h3>
+        <p class="p-dark p-small">
+          The recipe Beef Fajita Marinade is ready and is definitely a
+          tremendous
+          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
+          recipe serves 2 and
+        </p>
+        <a class="a-read-more" href="">Read More</a>
+      </div>
+      <div class="post">
+        <img class="img-round" src="/images/Image -1.png" alt="" />
+        <h3>Beef Fajita Marinade</h3>
+        <p class="p-dark p-small">
+          The recipe Beef Fajita Marinade is ready and is definitely a
+          tremendous
+          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
+          recipe serves 2 and
+        </p>
+        <a class="a-read-more" href="">Read More</a>
+      </div>
+      <div class="post">
+        <img class="img-round" src="/images/Image -1.png" alt="" />
+        <h3>Beef Fajita Marinade</h3>
+        <p class="p-dark p-small">
+          The recipe Beef Fajita Marinade is ready and is definitely a
+          tremendous
+          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
+          recipe serves 2 and
+        </p>
+        <a class="a-read-more" href="">Read More</a>
+      </div>
+      <div class="post">
+        <img class="img-round" src="/images/Image -1.png" alt="" />
+        <h3>Beef Fajita Marinade</h3>
+        <p class="p-dark p-small">
+          The recipe Beef Fajita Marinade is ready and is definitely a
+          tremendous
+          <b>gluten f ree and primal</b> option for lovers of Mexican food. This
+          recipe serves 2 and
+        </p>
+        <a class="a-read-more" href="">Read More</a>
+      </div> -->
 
     <ul class="page-changer">
       <li class="active-page"><</li>
