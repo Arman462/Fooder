@@ -31,6 +31,16 @@ app.get("/query/:queryPhrase", (req, res) => {
 
 });
 
+app.get("/recipe/:recipeID", (req, res) => {
+    let url = "https://api.spoonacular.com/recipes/" + req.params.recipeID + "/information?apiKey=63c9ee7c9738400d8ac175998bec5de9";
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data);
+            res.render("recipe-page", { recipe: data })
+        });
+});
+
 app.post("/", function (req, res) {
     let searchedPhrase = req.body.search_input;
     res.redirect("/query/" + searchedPhrase);

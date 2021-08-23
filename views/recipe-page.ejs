@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@700@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+  <nav>
+    <span class="logo">Fooder</span>
+    <img class="toggler" src="/images/hamburger-menu.svg" alt="" />
+    <ul class="link-container">
+      <li><a class="nav-link" href="/">HOME</a></li>
+      <li><a class="nav-link" href="">CONTACT</a></li>
+      <li><a class="nav-link" href="">ABOUT</a></li>
+    </ul>
+  </nav>
+
+  <div class="recipe-page-content">
+    <form class="search-box" action="/" method="POST">
+      <input name="search_input" class="input input-orange" type="text" placeholder="Start searching" />
+      <button type="submit" class="btn btn-orange">Search</button>
+    </form>
+
+    <h2 class="color-orange recipe-page-main-heading"><%= recipe.title %></h2>
+
+    <div class="recipe-container">
+      <img class="img-round img-rectangle" src=<%= recipe.image %> alt="" />
+
+      <div class="summary-container">
+        <h2 class="color-orange summary-heading">Summary</h2>
+        <p class="p-dark"><%- recipe.summary %></p>
+      </div>
+
+      <div>
+        <h2 class="color-orange">ingredients</h2>
+        <ul class="ingredients-list">
+
+          <%  recipe.extendedIngredients.forEach(ingredient =>{ %>
+          <li><%- ingredient.original %></li>
+          <%   })  %>
+        </ul>
+      </div>
+
+      <div class="steps-container">
+        <h2 class="color-orange">Steps</h2>
+
+        <%   recipe.analyzedInstructions[0].steps.forEach(step => { %>
+        <p class="p-dark recipe-step">
+          <span class="span-marked">Step <%= step.number %> - </span>
+          <%= step.step %>
+        </p>
+        <% }) %>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p class="p-small">Bon Apetit</p>
+    <div class="icon-group">
+      <img class="icon" src="/images/contact-icon.svg" alt="" />
+      <img class="icon" src="/images/info-icon.svg" alt="" />
+      <img class="icon" src="/images/home-icon.svg" alt="" />
+    </div>
+    <p class="p-small">Created by the team of Arena &copy;</p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/javascript/index.js"></script>
+</body>
+
+</html>
