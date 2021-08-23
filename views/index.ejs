@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@700@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <nav class="nav-overlay">
+        <span class="logo">Fooder</span>
+        <img class="toggler" src="images/hamburger-menu.svg" alt="" />
+        <ul class="link-container">
+          <li><a class="nav-link" href="/">HOME</a></li>
+          <li><a class="nav-link" href="">CONTACT</a></li>
+          <li><a class="nav-link" href="">ABOUT</a></li>
+        </ul>
+      </nav>
+
+      <div class="main-container">
+        <div class="main-container-first-section">
+          <h1>
+            Search <br />
+            Your <br />
+            Recipe
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna.
+          </p>
+          <form class="search-box" action="/" method="POST">
+            <input
+              class="input input-white"
+              type="text"
+              name="search_input"
+              placeholder="Start searching"
+            />
+            <button class="btn btn-white" type="submit">Search</button>
+          </form>
+        </div>
+        <img src="images/main-burger.png" alt="" />
+      </div>
+
+      <div class="middle-bar">
+        <h2 class="middle-bar-heading">Let's get cooking</h2>
+        <p class="middle-bar-paragraph">
+          <span
+            >You can either search or explore some of our random recipes down
+            here.</span
+          >
+        </p>
+        <form class="search-box" action="/" method="POST">
+          <input
+            class="input input-white"
+            type="text"
+            placeholder="Start searching"
+            name="search_input"
+          />
+          <button class="btn btn-white" type="submit">Search</button>
+        </form>
+      </div>
+    </main>
+
+    <div class="post-group">
+      <% recipeData.recipes.forEach(recipe =>{ %>
+      <div class="post">
+        <img class="img-round" src="<%= recipe.image %>" alt="" />
+        <h3><%= recipe.title %></h3>
+        <p class="p-dark p-small"><%- recipe.summary %></p>
+        <p class="p-dark p-small">...</p>
+        <a class="a-read-more" href="">Read More</a>
+      </div>
+      <% }) %>
+    </div>
+
+    <footer>
+      <p class="p-small">Bon Apetit</p>
+      <div class="icon-group">
+        <img class="icon" src="images/contact-icon.svg" alt="" />
+        <img class="icon" src="images/info-icon.svg" alt="" />
+        <img class="icon" src="images/home-icon.svg" alt="" />
+      </div>
+      <p class="p-small">Created by the team of Arena &copy;</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="javascript/index.js"></script>
+  </body>
+</html>

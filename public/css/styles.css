@@ -348,7 +348,7 @@ h3 {
   }
 
   .middle-bar-paragraph::after {
-    content: "Down here you can find some of the trending dishes. Enjoy it.";
+    content: "Down here you can find some random dishes. Enjoy it.";
   }
 }
 

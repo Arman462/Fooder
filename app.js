@@ -9,18 +9,23 @@ app.set('view engine', 'ejs');
 
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/index.html")
+    let url = "https://api.spoonacular.com/recipes/random?number=9&apiKey=63c9ee7c9738400d8ac175998bec5de9";
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            res.render('index', { recipeData: data });
+        })
 });
 
 app.get("/query/:queryPhrase", (req, res) => {
 
-    url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=63c9ee7c9738400d8ac175998bec5de9&addRecipeInformation=true&query="
+    let url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=63c9ee7c9738400d8ac175998bec5de9&addRecipeInformation=true&query="
         + req.params.queryPhrase + "&number=9";
 
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             res.render('result', { searchedPhrase: req.params.queryPhrase, recipeData: data });
         })
 
@@ -28,7 +33,6 @@ app.get("/query/:queryPhrase", (req, res) => {
 
 app.post("/", function (req, res) {
     let searchedPhrase = req.body.search_input;
-    console.log(searchedPhrase);
     res.redirect("/query/" + searchedPhrase);
 });
 
