@@ -742,3 +742,8 @@ ul {
 .recipe-page-main-heading {
   text-align: center;
 }
+
+li a {
+  all: unset;
+  cursor: pointer;
+}

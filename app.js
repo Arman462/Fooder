@@ -18,15 +18,18 @@ app.get("/", function (req, res) {
         })
 });
 
-app.get("/query/:queryPhrase", (req, res) => {
+app.get("/query/:queryPhrase/:pageNumber", (req, res) => {
+    pageNumber = req.params.pageNumber;
 
     let url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=63c9ee7c9738400d8ac175998bec5de9&addRecipeInformation=true&query="
-        + req.params.queryPhrase + "&number=9";
+        + req.params.queryPhrase + "&number=9" + "&offset=" + (pageNumber - 1) * 9;
 
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            res.render('result', { searchedPhrase: req.params.queryPhrase, recipeData: data });
+            let totalPages = Math.ceil(data.totalResults / 9);
+            console.log(totalPages);
+            res.render('result', { searchedPhrase: req.params.queryPhrase, recipeData: data, totalPages: totalPages, currentPage: pageNumber });
         })
 
 });
@@ -43,7 +46,7 @@ app.get("/recipe/:recipeID", (req, res) => {
 
 app.post("/", function (req, res) {
     let searchedPhrase = req.body.search_input;
-    res.redirect("/query/" + searchedPhrase);
+    res.redirect("/query/" + searchedPhrase + "/1");
 });
 
 app.listen(3000, function () {
