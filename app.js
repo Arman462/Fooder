@@ -46,6 +46,10 @@ app.get("/recipe/:recipeID", (req, res) => {
 
 app.post("/", function (req, res) {
     let searchedPhrase = req.body.search_input;
+    if (searchedPhrase.includes("/") || searchedPhrase.includes("?")) {
+        searchedPhrase = searchedPhrase.replace(/\//g, " ");
+        searchedPhrase = searchedPhrase.replace(/\?/g, " ");
+    }
     res.redirect("/query/" + searchedPhrase + "/1");
 });
 
