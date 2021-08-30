@@ -30,6 +30,7 @@
       <button type="submit" class="btn btn-orange">Search</button>
     </form>
 
+    
     <% if (recipeData.totalResults == 0){ %>
     <h2 class="color-orange">No results for <%= searchedPhrase %></h2>
     <p class="p-dark">Try searching a different keyword.</p>
@@ -37,6 +38,7 @@
     <h2 class="color-orange">Here are results for <%= searchedPhrase %></h2>
     <p class="p-dark"><%= recipeData.totalResults %> matches found</p>
     <% } %>
+
   </div>
 
   <div class="post-group">
@@ -57,7 +59,7 @@
       <</li>
         <% } else { %>
     <li class="active-page">
-      <a href="/query/<%= searchedPhrase %>/<%= parseInt(currentPage) -1 %>  ">
+      <a href="/query/<%= searchedPhrase %>/<%= parseInt(currentPage) -1 %>">
         <</a>
     </li>
     <% } %> <% for (let i = 1; i <= totalPages; i++){ %> <% if (currentPage ==
@@ -69,7 +71,7 @@
     <li>></li>
     <% } else { %>
     <li class="active-page">
-      <a href="/query/<%= searchedPhrase %>/<%= parseInt(currentPage) + 1 %>  ">></a>
+      <a href="/query/<%= searchedPhrase %>/<%= parseInt(currentPage) + 1 %>">></a>
     </li>
     <% } %>
   </ul>

@@ -28,7 +28,6 @@ app.get("/query/:queryPhrase/:pageNumber", (req, res) => {
         .then(res => res.json())
         .then(data => {
             let totalPages = Math.ceil(data.totalResults / 9);
-            console.log(totalPages);
             res.render('result', { searchedPhrase: req.params.queryPhrase, recipeData: data, totalPages: totalPages, currentPage: pageNumber });
         })
 
@@ -39,7 +38,6 @@ app.get("/recipe/:recipeID", (req, res) => {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            // console.log(data);
             res.render("recipe-page", { recipe: data })
         });
 });
@@ -53,14 +51,10 @@ app.post("/", function (req, res) {
     res.redirect("/query/" + searchedPhrase + "/1");
 });
 
+app.use((req, res) => {
+    res.render('404')
+});
+
 app.listen(3000, function () {
     console.log("Server is running on port 3000");
 });
-
-function hex2a(hexx) {
-    var hex = hexx.toString();//force conversion
-    var str = '';
-    for (var i = 0; i < hex.length; i += 2)
-        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
-    return str;
-}

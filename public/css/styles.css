@@ -12,6 +12,9 @@ html {
 body {
   /* background: var(--color-primary); */
   font-family: oswald, Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 *::selection {
@@ -458,6 +461,7 @@ h3 {
 
 /* Footer */
 footer {
+  margin-top: auto;
   background: var(--color-primary);
   padding: 15px;
 }
@@ -806,4 +810,14 @@ ul {
 
 .recipe-page-main-heading {
   text-align: center;
+}
+
+/* 404 page */
+.not-found-page-content {
+  margin: 20px;
+  min-height: 100%;
+}
+
+.not-found-page-content h2 {
+  margin-bottom: 20px;
 }
