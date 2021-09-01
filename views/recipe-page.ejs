@@ -8,7 +8,7 @@
   <title>Fooder - <%= recipe.title %></title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@700@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@200;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/normalize.css" />
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
@@ -33,35 +33,34 @@
     <h2 class="color-orange recipe-page-main-heading"><%= recipe.title %></h2>
 
     <div class="recipe-container">
-      <img class="img-round img-rectangle" src=<%= recipe.image %> alt="" />
+      <img class="img-round img-rectangle" src= <%= recipe.image %>
+        alt="" />
 
-      <div class="summary-container">
-        <h2 class="color-orange summary-heading">Summary</h2>
-        <p class="p-dark"><%- recipe.summary %></p>
-      </div>
+        <div class="summary-container">
+          <h2 class="color-orange summary-heading">Summary</h2>
+          <p class="p-dark"><%- recipe.summary %></p>
+        </div>
 
-      <div>
-        <h2 class="color-orange">ingredients</h2>
-        <ul class="ingredients-list">
-
-          <%  recipe.extendedIngredients.forEach(ingredient =>{ %>
-          <li><%- ingredient.original %></li>
-          <%   })  %>
-        </ul>
-      </div>
-
-      <div class="steps-container">
-        <h2 class="color-orange">Steps</h2>
-
-        <%   recipe.analyzedInstructions[0].steps.forEach(step => { %>
-        <p class="p-dark recipe-step">
-          <span class="span-marked">Step <%= step.number %> - </span>
-          <%= step.step %>
-        </p>
+        <div>
+          <h2 class=" color-orange">ingredients</h2>
+      <ul class="ingredients-list">
+        <% recipe.extendedIngredients.forEach(ingredient =>{ %>
+        <li><%- ingredient.original %></li>
         <% }) %>
-
-      </div>
+      </ul>
     </div>
+
+    <div class="steps-container">
+      <h2 class="color-orange">Steps</h2>
+
+      <% recipe.analyzedInstructions[0].steps.forEach(step => { %>
+      <p class="p-dark recipe-step">
+        <span class="span-marked">Step <%= step.number %> - </span>
+        <%= step.step %>
+      </p>
+      <% }) %>
+    </div>
+  </div>
   </div>
 
   <footer>

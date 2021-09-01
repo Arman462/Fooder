@@ -270,10 +270,22 @@ h3 {
   mix-blend-mode: overlay;
 }
 
+@-moz-document url-prefix() {
+  .input {
+    padding: 4px 25px;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .input {
     font-size: 3rem;
     padding: 10px 30px;
+  }
+
+  @-moz-document url-prefix() {
+    .input {
+      padding: 5px 30px;
+    }
   }
 }
 

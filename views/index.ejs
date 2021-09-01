@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@700@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@200;400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/normalize.css" />
@@ -75,7 +75,9 @@
     <div class="post-group">
       <% recipeData.recipes.forEach(recipe =>{ %>
       <div class="post">
-        <a href="/recipe/<%= recipe.id %>"><img class="img-round" src="<%= recipe.image %>" alt="" /></a>
+        <a href="/recipe/<%= recipe.id %>"
+          ><img class="img-round" src="<%= recipe.image %>" alt=""
+        /></a>
         <h3><a href="/recipe/<%= recipe.id %>"><%= recipe.title %></a></h3>
         <p class="p-dark p-small"><%- recipe.summary %></p>
         <p class="p-dark p-small">...</p>
@@ -88,7 +90,9 @@
       <p class="p-small">Bon Apetit</p>
       <div class="icon-group">
         <a href="/"><img class="icon" src="/images/home-icon.svg" alt="" /></a>
-        <a href=""><img class="icon" src="/images/contact-icon.svg" alt="" /></a>
+        <a href=""
+          ><img class="icon" src="/images/contact-icon.svg" alt=""
+        /></a>
         <a href=""><img class="icon" src="/images/info-icon.svg" alt="" /></a>
       </div>
       <p class="p-small">Created by the team of Arena &copy;</p>
