@@ -348,8 +348,16 @@ h3 {
 
 /* Middle bar */
 .middle-bar {
-  background: var(--color-primary);
   padding: 40px 20px;
+  position: relative;
+}
+
+.middle-bar::after {
+  content: "";
+  position: absolute;
+  background: var(--color-primary);
+  inset: 0;
+  z-index: -1;
   mix-blend-mode: overlay;
 }
 
@@ -573,7 +581,16 @@ nav {
 }
 
 .nav-overlay {
-  background-blend-mode: overlay;
+  background: none;
+  position: relative;
+}
+
+.nav-overlay::after {
+  content: "";
+  background: var(--color-primary);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   mix-blend-mode: overlay;
 }
 
@@ -657,6 +674,7 @@ nav ul li:hover {
 main {
   background-image: url(/images/Background.png);
   background-size: cover;
+  isolation: isolate;
 }
 
 @media screen and (min-width: 1024px) {
