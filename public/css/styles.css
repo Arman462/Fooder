@@ -267,7 +267,6 @@ h3 {
 
 .input-white::placeholder {
   color: var(--color-white);
-  mix-blend-mode: overlay;
 }
 
 @-moz-document url-prefix() {
