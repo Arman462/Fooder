@@ -520,6 +520,7 @@ footer p {
 
 .main-container h1 {
   margin: 20px;
+  z-index: -1;
 }
 
 .main-container p {
