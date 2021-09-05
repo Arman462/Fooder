@@ -13,22 +13,31 @@ app.get("/", function (req, res) {
 
     fetch(url)
         .then(res => res.json())
-        .then(data => {
-            res.render('index', { recipeData: data });
+        .then(randomRecipes => {
+            res.render('index', { recipeData: randomRecipes });
         })
 });
 
 app.get("/query/:queryPhrase/:pageNumber", (req, res) => {
-    pageNumber = req.params.pageNumber;
+    let searchedPhrase = req.params.queryPhrase;
+    let pageNumber = req.params.pageNumber;
+    let offset = (pageNumber - 1) * 9;
 
     let url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=63c9ee7c9738400d8ac175998bec5de9&addRecipeInformation=true&query="
-        + req.params.queryPhrase + "&number=9" + "&offset=" + (pageNumber - 1) * 9;
+        + searchedPhrase + "&number=9" + "&offset=" + offset;
 
     fetch(url)
         .then(res => res.json())
-        .then(data => {
-            let totalPages = Math.ceil(data.totalResults / 9);
-            res.render('result', { searchedPhrase: req.params.queryPhrase, recipeData: data, totalPages: totalPages, currentPage: pageNumber });
+        .then(recipeData => {
+            let totalPages = Math.ceil(recipeData.totalResults / 9);
+            let options = {
+                searchedPhrase: searchedPhrase,
+                recipeData: recipeData,
+                totalPages: totalPages,
+                currentPage: pageNumber
+            }
+
+            res.render('result', options);
         })
 
 });
@@ -37,17 +46,19 @@ app.get("/recipe/:recipeID", (req, res) => {
     let url = "https://api.spoonacular.com/recipes/" + req.params.recipeID + "/information?apiKey=63c9ee7c9738400d8ac175998bec5de9";
     fetch(url)
         .then(res => res.json())
-        .then(data => {
-            res.render("recipe-page", { recipe: data })
+        .then(recipeInfo => {
+            res.render("recipe-page", { recipe: recipeInfo })
         });
 });
 
 app.post("/", function (req, res) {
     let searchedPhrase = req.body.search_input;
+
     if (searchedPhrase.includes("/") || searchedPhrase.includes("?")) {
         searchedPhrase = searchedPhrase.replace(/\//g, " ");
         searchedPhrase = searchedPhrase.replace(/\?/g, " ");
     }
+
     res.redirect("/query/" + searchedPhrase + "/1");
 });
 
