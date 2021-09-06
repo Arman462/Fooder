@@ -72,6 +72,8 @@
       </div>
     </main>
 
+    <% if (statusCode == 200){ %>
+
     <div class="post-group">
       <% recipeData.recipes.forEach(recipe =>{ %>
       <div class="post">
@@ -86,6 +88,13 @@
       <% }) %>
     </div>
 
+    <% }else{ %>
+
+    <h2 class="color-orange center-align">
+      There was an error. Please try egain later.
+    </h2>
+
+    <% } %>
     <footer>
       <p class="p-small">Bon Apetit</p>
       <div class="icon-group">

@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
+const { data } = require('jquery');
 
 const app = express();
 app.use(express.static(__dirname + "/public"));
@@ -10,11 +11,16 @@ app.set('view engine', 'ejs');
 
 app.get("/", function (req, res) {
     let url = "https://api.spoonacular.com/recipes/random?number=9&apiKey=63c9ee7c9738400d8ac175998bec5de9";
-
+    let statusCode = 200;
     fetch(url)
-        .then(res => res.json())
+        .then(res => {
+            statusCode = res.status;
+            // statusCode = 400;
+            console.log(statusCode);
+            return res.json();
+        })
         .then(randomRecipes => {
-            res.render('index', { recipeData: randomRecipes });
+            res.render('index', { recipeData: randomRecipes, statusCode: statusCode });
         })
 });
 
@@ -22,19 +28,24 @@ app.get("/query/:queryPhrase/:pageNumber", (req, res) => {
     let searchedPhrase = req.params.queryPhrase;
     let pageNumber = req.params.pageNumber;
     let offset = (pageNumber - 1) * 9;
+    let statusCode = 200;
 
     let url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=63c9ee7c9738400d8ac175998bec5de9&addRecipeInformation=true&query="
         + searchedPhrase + "&number=9" + "&offset=" + offset;
 
     fetch(url)
-        .then(res => res.json())
+        .then(res => {
+            statusCode = res.status;
+            return res.json();
+        })
         .then(recipeData => {
             let totalPages = Math.ceil(recipeData.totalResults / 9);
             let options = {
                 searchedPhrase: searchedPhrase,
                 recipeData: recipeData,
                 totalPages: totalPages,
-                currentPage: pageNumber
+                currentPage: pageNumber,
+                statusCode: statusCode,
             }
 
             res.render('result', options);
@@ -44,10 +55,14 @@ app.get("/query/:queryPhrase/:pageNumber", (req, res) => {
 
 app.get("/recipe/:recipeID", (req, res) => {
     let url = "https://api.spoonacular.com/recipes/" + req.params.recipeID + "/information?apiKey=63c9ee7c9738400d8ac175998bec5de9";
+    statusCode = 200;
     fetch(url)
-        .then(res => res.json())
+        .then(res => {
+            statusCode = res.status;
+            return res.json();
+        })
         .then(recipeInfo => {
-            res.render("recipe-page", { recipe: recipeInfo })
+            res.render("recipe-page", { recipe: recipeInfo, statusCode: statusCode })
         });
 });
 

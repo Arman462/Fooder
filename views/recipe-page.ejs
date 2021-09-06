@@ -30,6 +30,9 @@
       <button type="submit" class="btn btn-orange">Search</button>
     </form>
 
+
+    <% if (statusCode == 200){ %>
+
     <h2 class="color-orange recipe-page-main-heading"><%= recipe.title %></h2>
 
     <div class="recipe-container">
@@ -61,7 +64,18 @@
       <% }) %>
     </div>
   </div>
+
+  <% }else{ %>
+
+    <h2 class="color-orange center-align">
+      There was an error. Please try egain later.
+    </h2>
+
+    <% } %>
+    
   </div>
+
+  
 
   <footer>
     <p class="p-small">Bon Apetit</p>

@@ -66,6 +66,10 @@ h3 {
   font-weight: normal;
 }
 
+.center-align {
+  text-align: center;
+}
+
 @media screen and (min-width: 1024px) {
   p,
   h1,
